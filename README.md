@@ -17,3 +17,5 @@ An example command is:
 Requirements can be found in the `requirements.txt` file. 
 
 This script modifies the original notebook found in the `Source Notebook Directory.`
+
+*Data source: https://www.baseball-reference.com/*
