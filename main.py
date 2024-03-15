@@ -7,7 +7,7 @@ if __name__ == "__main__":
     import argparse
     from data_loader import load_player
     from data_manipulation import manipulate_data
-    from graph_builer import build_graph
+    from graph_builder import build_graph
 
     parser = argparse.ArgumentParser()
     parser.add_argument("output_file", help="The name of the output file. ")

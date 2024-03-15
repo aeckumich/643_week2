@@ -20,6 +20,14 @@ def calculate_rolling_mean(s: pd.Series, rolling_window: int) -> pd.Series:
 
 
 def manipulate_data(df: pd.DataFrame, drop_opening: bool = True) -> pd.DataFrame:
+    '''
+    Function to manipulate the data and calculate the rolling batting average.
+    :params:
+        df (pd.DataFrame): dataframe to be edited
+        drop_opening (bool): if True, the opening window with np.nan values are dropped. Defaults to True
+    :return:
+        pandas dataframe: dataframe with modifications made.
+    '''
     df["BA"] = df.apply(lambda row: batting_average(row.H, row.AB), axis=1)
     df["Rolling_BA"] = calculate_rolling_mean(df["BA"], 5)
     if drop_opening:
