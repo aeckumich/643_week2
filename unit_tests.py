@@ -36,16 +36,26 @@ class DataLoaderTest(unittest.TestCase):
             )  # Check if AB column has non-negative values
 
     def test_load_player_data_invalid(self):
+        """
+        Test function for loading data for unknown players
+        :return:
+        """
         for player in self.unknown_players:
             with self.assertRaises(AssertionError):
                 load_player(player)
 
 
 class DataManipulationTest(unittest.TestCase):
+    """
+    Class to create unit test cases on data manipulation file
+    """
     test_player = "Freddie Freeman"
     df = load_player(test_player)
 
     def test_manipulate_data(self):
+        """
+        Test case for data_manipulation.manipulate_data().
+        """
         df = manipulate_data(self.df)
         self.assertIsInstance(df, pd.DataFrame)  # test returns df
         self.assertIn("Rolling_BA", self.df)  # test rolling BA present
